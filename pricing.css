@@ -14,42 +14,6 @@ a {
 h1, h2, h3 {
   color: #333; 
 }
-
-/* Navigation Bar */
-nav {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    background-color: white; /* Light navbar */
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    
-}
-
-nav .logo {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    margin-left: 450px;
-}
-
-nav .nav-links li {
-    margin-left: 50px;
-}
-
-nav .nav-links a {
-    color: rgb(87, 166, 202);
-    font-size: 16px;
-}
 .header {
     margin-top: 80px;
     background-color: #e6f7ff; /* Light blue background */
@@ -241,3 +205,176 @@ footer {
   color: #333;
 }
 
+/* Responsive adjustments for screens 425px and below */
+@media (max-width: 500px) {
+
+  /* General adjustments */
+  body {
+    font-size: 14px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+
+  .header {
+    padding: 40px 0;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  /* Pricing section adjustments */
+  .pricing-table {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .pricing-table h2 {
+    font-size: 24px;
+  }
+
+  .pricing-table .price {
+    font-size: 32px;
+  }
+
+  .pricing-table ul li {
+    font-size: 14px;
+  }
+
+  .cta {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* Comparison table adjustments */
+  .comparison table {
+    font-size: 14px;
+  }
+
+  .comparison th, .comparison td {
+    padding: 10px;
+  }
+
+  /* Testimonials adjustments */
+  .testimonial p {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* FAQ section adjustments */
+  .faq h3 {
+    font-size: 16px;
+  }
+
+  .faq p {
+    font-size: 14px;
+  }
+  
+  /* Footer adjustments */
+  footer {
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+
+
+.pricing-table .price {
+  font-size: 30px;}
+}
+/* Additional adjustments for screens 320px and below */
+@media (max-width: 320px) {
+
+  /* General adjustments */
+  body {
+    font-size: 12px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.1em;
+  }
+
+  .header {
+    padding: 30px 0;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  /* Pricing section adjustments */
+  .pricing-table {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .pricing-table h2 {
+    font-size: 20px;
+  }
+
+  .pricing-table .price {
+    font-size: 28px;
+  }
+
+  .pricing-table ul li {
+    font-size: 12px;
+  }
+
+  .cta {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  /* Comparison table adjustments */
+  .comparison table {
+    font-size: 12px;
+  }
+
+  .comparison th, .comparison td {
+    padding: 8px;
+  }
+
+  /* Testimonials adjustments */
+  .testimonial p {
+    font-size: 14px;
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* FAQ section adjustments */
+  .faq h3 {
+    font-size: 16px;
+  }
+
+  .faq p {
+    font-size: 14px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 10px;
+    font-size: 16px;
+  }
+}

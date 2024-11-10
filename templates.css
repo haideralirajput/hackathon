@@ -15,41 +15,9 @@ h1, h2, h3 {
     color: #333; 
 }
 
-/* Navigation Bar */
-nav {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    background-color: white; /* Light navbar */
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    
-}
-
-nav .logo {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    margin-left: 450px;
-}
-
-nav .nav-links li {
-    margin-left: 50px;
-}
-
-nav .nav-links a {
-    color: rgb(87, 166, 202);
-    font-size: 16px;
-}
+/* nav {
+    padding: 10px 10px !important;
+} */
 /* General styles */
 body {
     font-family: Arial, sans-serif;

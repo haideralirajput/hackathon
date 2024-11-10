@@ -6,30 +6,47 @@
     <title>Resume Builder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="navbar.css">
+
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">Resume Builder</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="templates.html">Templates</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="overlay">
-            <div class="hero-content">
-                <h1>Create Your Professional Resume in Minutes</h1>
-                <p>Stand out with a resume that gets you noticed. Start building your career today.</p>
-                <a href="#" class="cta-button">Get Started Now</a>
-            </div>
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Resume Builder</div>
+    <ul class="nav-links">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Resume Builder</div>
+            <div class="close-btn">&times;</div>
         </div>
-    </section>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="myresume.html">My Resume</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="overlay">
+        <div class="hero-content">
+            <h1>Create Your Professional Resume in Minutes</h1>
+            <p>Stand out with a resume that gets you noticed. Start building your career today.</p>
+            <a href="templates.html" class="cta-button">Get Started Now</a>
+        </div>
+    </div>
+</section>
+    
+
+
 <!-- Feature Section -->
 <section class="feature-section">
     <h2>On-The-Fly Creative Resume and CV Builder Across Your Favorite Tools</h2>
@@ -76,7 +93,7 @@
             <p class="x-description">
                 Proven CV templates to increase your hiring chances. Fast, easy-to-use, and recruiter approved!
             </p>
-            <a href="#" class="x-btn x-primary-btn">Let's Build Your CV</a>
+            <a href="templates.html" class="x-btn x-primary-btn">Let's Build Your CV</a>
         </div>
     </div>
 </section>
@@ -101,7 +118,7 @@
     <h2>Featured Templates</h2>
     <div class="p-template-grid">
         <div class="p-template">
-            <img src="assets/images/haidercv.png" alt="Template 1" style="width: 290px;height: 350px;">
+            <img src="assets/images/haidercv.jpg" alt="Template 1" style="width: 290px;height: 350px;">
             <a href="templates.html">Choose Template</a>
         </div>
         <div class="p-template">
@@ -132,5 +149,31 @@
     <footer>
         <p>&copy; 2024 Resume Builder. All Rights Reserved.</p>
     </footer>
+    <script>
+ // Toggle sidebar visibility for burger menu
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+const closeBtn = document.querySelector('.close-btn');
+
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+closeBtn.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+});
+
+// Highlight the active page link on the navbar
+const currentLocation = window.location.href;
+const navLinksItems = document.querySelectorAll('.nav-links a');
+
+navLinksItems.forEach(link => {
+    if (link.href === currentLocation) {
+        link.classList.add('active');
+    }
+});
+
+    </script>
+    
 </body>
 </html>

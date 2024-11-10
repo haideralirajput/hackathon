@@ -7,20 +7,31 @@
     <title>Resume Builder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="templates.css">
-</head>
+    <link rel="stylesheet" href="navbar.css">
 
+</head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">Resume Builder</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="templates.html">Templates</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Resume Builder</div>
+    <ul class="nav-links">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Resume Builder</div>
+            <div class="close-btn">&times;</div>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="myresume.html">My Resume</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
 
     <!--  Section -->
     <section class="header">
@@ -40,7 +51,7 @@
         <div class="template-container">
             <!-- Template 1 -->
             <div class="template-box">
-                <img src="assets/images/haidercv.png" alt="Modern Template" class="template-img" style="width: 290px;height: 375px;">
+                <img src="assets/images/haidercv.jpg" alt="Modern Template" class="template-img" style="height: 375px;">
                 <h3>Modern Template</h3>
                 <a href="utemplates.html" class="use-template-btn"> Use This Template</a>
             </div>
@@ -155,6 +166,31 @@
             });
         });
     </script>
+    <script>
+        // Toggle sidebar visibility for burger menu
+       const burger = document.querySelector('.burger');
+       const navLinks = document.querySelector('.nav-links');
+       const closeBtn = document.querySelector('.close-btn');
+       
+       burger.addEventListener('click', () => {
+           navLinks.classList.toggle('active');
+       });
+       
+       closeBtn.addEventListener('click', () => {
+           navLinks.classList.remove('active');
+       });
+       
+       // Highlight the active page link on the navbar
+       const currentLocation = window.location.href;
+       const navLinksItems = document.querySelectorAll('.nav-links a');
+       
+       navLinksItems.forEach(link => {
+           if (link.href === currentLocation) {
+               link.classList.add('active');
+           }
+       });
+       
+           </script>
 </body>
 
 </html>

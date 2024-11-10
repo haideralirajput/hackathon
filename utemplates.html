@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume Builder</title>
+  <link rel="stylesheet" href="navbar.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -113,7 +115,7 @@
     }
 
     .template-preview {
-      background-color: #fff;
+      background-color: #e6f7ff;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -122,10 +124,12 @@
     }
 
     .template-preview img {
-      max-width: 400px;
-      width: 260px;
-      height: 400px;
-    }
+    max-width: 324px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 
     .template-label {
       font-weight: bold;
@@ -137,60 +141,34 @@
       margin-top: 5px;
     }
 
-
-/* Navigation Bar */
-nav {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    background-color: white; /* Light navbar */
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    
-}
-
-nav .logo {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    margin-left: 450px;
-}
-
-nav .nav-links li {
-    margin-left: 50px;
-}
-
-nav .nav-links a {
-    color: rgb(87, 166, 202);
-    font-size: 16px;
-}
   </style>
-</head>
 
-<body>
-     <!-- Navigation Bar -->
-     <nav>
-        <div class="logo">Resume Builder</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="templates.html">Templates</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  </head>
+  <body>
+  <!-- Navigation Bar -->
+  <nav>
+      <div class="logo">Resume Builder</div>
+      <ul class="nav-links">
+          <div class="sidebar-header">
+              <div class="sidebar-logo">Resume Builder</div>
+              <div class="close-btn">&times;</div>
+          </div>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="myresume.html">My Resume</a></li>
+          <li><a href="templates.html">Templates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+  </nav>
   <div class="container" style="margin-top: 80px;">
     <section class="template-preview">
-      <img src="assets/images/haidercv.png" alt="Resume Template Preview"  />
+
       <p class="template-label">Modern Template</p>
       <p class="template-description">
         A sleek and modern design perfect for professionals.
@@ -384,7 +362,31 @@ nav .nav-links a {
         }
     };
 </script>
-
+<script>
+  // Toggle sidebar visibility for burger menu
+ const burger = document.querySelector('.burger');
+ const navLinks = document.querySelector('.nav-links');
+ const closeBtn = document.querySelector('.close-btn');
+ 
+ burger.addEventListener('click', () => {
+     navLinks.classList.toggle('active');
+ });
+ 
+ closeBtn.addEventListener('click', () => {
+     navLinks.classList.remove('active');
+ });
+ 
+ // Highlight the active page link on the navbar
+ const currentLocation = window.location.href;
+ const navLinksItems = document.querySelectorAll('.nav-links a');
+ 
+ navLinksItems.forEach(link => {
+     if (link.href === currentLocation) {
+         link.classList.add('active');
+     }
+ });
+ 
+     </script>
   
 </body>
 

@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Haider Ali - Resume</title>
+    <link rel="stylesheet" href="navbar.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            padding: 20px;
-            margin: 0;
-        }
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; 
+    background-color: #f9f9f9;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
         .container {
             background-color: #fff;
             max-width: 800px;
@@ -19,6 +29,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 90px;
         }
 
         h1 {
@@ -80,63 +91,34 @@
         .project-item p {
             margin: 5px 0;
         }
-        /* Navigation Bar */
-        nav {
-    display: flex;
-    justify-content: space-between; /* Space between the logo and links */
-    align-items: center;
-    background-color: white; /* Light navbar */
-    padding: 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-nav .logo {
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    margin-left: auto; /* Pushes links to the right side */
-}
-
-nav .nav-links li {
-    margin-left: 30px; /* Adjust spacing between items */
-}
-
-nav .nav-links a {
-    color: rgb(87, 166, 202);
-    font-size: 16px;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
+       
 
     </style>
 </head>
 <body>
             <!-- Navigation Bar -->
-            <nav>
-                <div class="logo">Resume Builder</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="myresume.html">My Resume</a></li>
-    
-                    <li><a href="templates.html">Templates</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<!-- Navigation Bar -->
+<nav>
+    <div class="logo">Resume Builder</div>
+    <ul class="nav-links">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">Resume Builder</div>
+            <div class="close-btn">&times;</div>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="myresume.html">My Resume</a></li>
+        <li><a href="templates.html">Templates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</nav>
+
     <div class="container">
         <h1>Muhammad Haider Ali</h1>
         <div class="personal-info">
@@ -216,5 +198,30 @@ a {
             section.style.display = section.style.display === 'none' ? 'block' : 'none';
         }
     </script>
+    <script>
+        // Toggle sidebar visibility for burger menu
+       const burger = document.querySelector('.burger');
+       const navLinks = document.querySelector('.nav-links');
+       const closeBtn = document.querySelector('.close-btn');
+       
+       burger.addEventListener('click', () => {
+           navLinks.classList.toggle('active');
+       });
+       
+       closeBtn.addEventListener('click', () => {
+           navLinks.classList.remove('active');
+       });
+       
+       // Highlight the active page link on the navbar
+       const currentLocation = window.location.href;
+       const navLinksItems = document.querySelectorAll('.nav-links a');
+       
+       navLinksItems.forEach(link => {
+           if (link.href === currentLocation) {
+               link.classList.add('active');
+           }
+       });
+       
+           </script>
 </body>
 </html>
